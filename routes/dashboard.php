@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
-Route::any('dashboard',function (){
-    return 'test';
+Route::name('dashboard.')->prefix('dashboard')->group(function () {
+
 });

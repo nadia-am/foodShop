@@ -12,6 +12,12 @@ class CreateMenuTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
+
+            $table->foreignId('restaurant_id')
+                  ->constrained('restaurants')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
+
             $table->timestamps();
         });
     }

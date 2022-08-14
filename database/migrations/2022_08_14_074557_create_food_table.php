@@ -14,6 +14,12 @@ class CreateFoodTable extends Migration
             $table->unsignedInteger('price');
             $table->unsignedInteger('discount');
             $table->text('ingredient');
+
+            $table->foreignId('menu_id')
+                  ->constrained('menus')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
+
             $table->timestamps();
         });
     }
